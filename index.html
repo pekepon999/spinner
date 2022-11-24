@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<div class="spinner">
+<p>NowLoding...</p>
+  <div class="spinner-sector spinner-red"></div>
+  <div class="spinner-sector spinner-blue"></div>
+  <div class="spinner-sector spinner-yellow"></div>
+</div>
+
+<style>
+.spinner{
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid black; */
+  border-radius: 50%;
+  position: relative;
+  
+  animation-name:text-change;
+  animation-duration:2s;
+  animation-timing-function:cubic-bezier(0, 0, 0.49, 1.2);
+  animation-iteration-count: infinite;
+
+}
+.spinner-sector{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  mix-blend-mode: color;
+  animation-name:spin-rotate;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+.spinner-red{
+  border-right: 8px solid red;
+
+}
+.spinner-blue{
+  border-left: 8px solid blue;
+
+}
+.spinner-yellow{
+  border-bottom: 8px solid yellow;
+
+}
+@keyframes spin-rotate{
+  0%{
+     transform: rotate(0deg);
+  }
+  50%{
+     transform: rotate(180deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes text-change {
+  0%,100%{
+    opacity:0;
+  }
+ 25%{
+   opacity: 0.6;
+ }
+ 75%{
+   opacity: 0.6;
+ }
+}
+</style>
+
+</script>
+</body>
+</html>
